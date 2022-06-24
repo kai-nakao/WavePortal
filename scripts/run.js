@@ -7,15 +7,15 @@ const main = async () => {
   console.log('Contract deployed to:', waveContract.address)
   console.log('Contract deployed by:', owner.address)
 
-  let waveCount = await waveContract.getTotalSum()
+  let waveCount = await waveContract.getTotalWaves()
 
-  let waveTxn = await waveContract.purchase()
+  let waveTxn = await waveContract.wave()
 
-  waveCount = await waveContract.getTotalSum()
+  waveCount = await waveContract.getTotalWaves()
 
-  waveTxn = await waveContract.connect(randomPerson).purchase()
+  waveTxn = await waveContract.connect(randomPerson).wave()
 
-  waveCount = await waveContract.getTotalSum()
+  waveCount = await waveContract.getTotalWaves()
 }
 
 const runMain = async () => {
